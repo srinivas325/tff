@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "b" {
-  bucket = "my-tf-massiveprince-bucket"
+  bucket = "my-tf-anagdevops-bucket"
   acl    = "private"
 
   tags = {
