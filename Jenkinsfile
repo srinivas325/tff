@@ -1,3 +1,5 @@
+def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-credentials']]
+
 pipeline {
     agent any
     
@@ -8,11 +10,6 @@ pipeline {
             }
         }
         
-        stage ("AWS credentials") {
-            steps {
-                withAWS(credentials: 'aws-credentials')
-            }
-        }
         stage ("terraform init") {
             steps {
                 bat 'terraform init'
