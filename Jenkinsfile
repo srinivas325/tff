@@ -7,32 +7,32 @@ pipeline {
     stages {
         stage ("checkout from GIT") {
             steps {
-                git branch: 'main', credentialsId: 'cde06f21-9ae7-4081-a549-f7bdb515dc6f', url: 'https://github.com/codepipe/tff.git'
+                git branch: 'main', credentialsId: '38954d07-1789-43ec-99bf-6f874f9ea731', url: 'https://github.com/srinivas325/tff.git'
             }
         }
         stage ("terraform init") {
             steps {
-                sh 'terraform init'
+                bat 'terraform init'
             }
         }
         stage ("terraform fmt") {
             steps {
-                sh 'terraform fmt'
+                bat 'terraform fmt'
             }
         }
         stage ("terraform validate") {
             steps {
-                sh 'terraform validate'
+                bat 'terraform validate'
             }
         }
         stage ("terrafrom plan") {
             steps {
-                sh 'terraform plan '
+                bat 'terraform plan '
             }
         }
         stage ("terraform apply") {
             steps {
-                sh 'terraform apply --auto-approve'
+                bat 'terraform apply --auto-approve'
             }
         }
     }
