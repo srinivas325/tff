@@ -8,12 +8,11 @@ pipeline {
             }
         }
         
-        stage ("AWS credentials'" {
+        stage ("AWS credentials") {
             steps {
                 withAWS(credentials: 'aws-credentials')
             }
         }
-               
         stage ("terraform init") {
             steps {
                 bat 'terraform init'
