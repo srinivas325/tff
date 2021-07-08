@@ -30,9 +30,9 @@ pipeline {
                 bat 'terraform plan '
             }
         }
-        stage ("terraform destroy") {
+        stage ("terraform plan") {
             steps {
-                bat 'terraform destroy --auto-approve'
+                bat 'terraform plan --auto-approve'
             }
         }
     }
